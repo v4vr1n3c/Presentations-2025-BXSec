@@ -1,6 +1,6 @@
 ---
 
-# README - Building Bots for Offensive Operations / Construindo Bots para Operações Ofensivas  
+# Building Bots for Offensive Operations / Construindo Bots para Operações Ofensivas  
 
 ## 🇧🇷 Português  
 
