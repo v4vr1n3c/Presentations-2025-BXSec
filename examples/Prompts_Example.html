@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompts para Pentest</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .description {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .prompt-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .prompt-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .prompt-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .prompt-number {
+            background-color: #3498db;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .prompt-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .phase-title {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .steps {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+        
+        .steps li {
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .prompt-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pentest Prompt Library</h1>
+        <p class="description">20 prompts para testes de penetração com etapas detalhadas</p>
+    </header>
+    
+    <div class="prompt-container">
+        <!-- Prompt 1 -->
+        <div class="prompt-card">
+            <div class="prompt-number">1</div>
+            <h3 class="prompt-title">Reconhecimento de Domínio</h3>
+            <div class="phase-title">Fase de Coleta de Informações:</div>
+            <ol class="steps">
+                <li>Consultar registros DNS (A, AAAA, MX, NS, TXT)</li>
+                <li>Identificar subdomínios através de ferramentas passivas</li>
+                <li>Coletar informações WHOIS</li>
+                <li>Buscar dados em archives.org para histórico</li>
+                <li>Analisar certificados SSL/TLS</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 2 -->
+        <div class="prompt-card">
+            <div class="prompt-number">2</div>
+            <h3 class="prompt-title">Varredura de Portas e Serviços</h3>
+            <div class="phase-title">Fase de Varredura:</div>
+            <ol class="steps">
+                <li>Executar varredura SYN para portas mais comuns</li>
+                <li>Realizar varredura completa de todas as portas</li>
+                <li>Identificar serviços e versões em portas abertas</li>
+                <li>Realizar varredura de vulnerabilidades com NSE scripts</li>
+                <li>Documentar descobertas para análise posterior</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 3 -->
+        <div class="prompt-card">
+            <div class="prompt-number">3</div>
+            <h3 class="prompt-title">Análise de Aplicação Web</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Identificar tecnologias utilizadas (Wappalyzer)</li>
+                <li>Mapear estrutura e endpoints da aplicação</li>
+                <li>Testar vulnerabilidades OWASP Top 10</li>
+                <li>Analisar código-fonte quando disponível</li>
+                <li>Testar funcionalidades de upload e entrada de dados</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 4 -->
+        <div class="prompt-card">
+            <div class="prompt-number">4</div>
+            <h3 class="prompt-title">Teste de Força Bruta</h3>
+            <div class="phase-title">Fase de Ataque:</div>
+            <ol class="steps">
+                <li>Identificar formulários de autenticação</li>
+                <li>Coletar possíveis nomes de usuário</li>
+                <li>Preparar listas de senhas comuns/personalizadas</li>
+                <li>Configurar ferramentas de força bruta (Hydra, Burp Intruder)</li>
+                <li>Executar testes controlando taxa de requisições</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 5 -->
+        <div class="prompt-card">
+            <div class="prompt-number">5</div>
+            <h3 class="prompt-title">Engenharia Social - Phishing</h3>
+            <div class="phase-title">Fase de Engenharia Social:</div>
+            <ol class="steps">
+                <li>Identitar alvos e coletar informações públicas</li>
+                <li>Criar domínio similar ou confiável</li>
+                <li>Desenvolver e-mail/modelo de phishing convincente</li>
+                <li>Implementar mecanismo de captura de credenciais</li>
+                <li>Analisar resultados e taxa de sucesso</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 6 -->
+        <div class="prompt-card">
+            <div class="prompt-number">6</div>
+            <h3 class="prompt-title">Análise de Vulnerabilidades em Serviços de Rede</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Identificar serviços expostos (SMB, FTP, SSH, RDP)</li>
+                <li>Testar configurações padrão e autenticação nula</li>
+                <li>Verificar versões vulneráveis de serviços</li>
+                <li>Explorar vulnerabilidades conhecidas (metasploit)</li>
+                <li>Documentar possíveis vetores de ataque</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 7 -->
+        <div class="prompt-card">
+            <div class="prompt-number">7</div>
+            <h3 class="prompt-title">Teste de Vazamento de Informações</h3>
+            <div class="phase-title">Fase de Coleta:</div>
+            <ol class="steps">
+                <li>Analisar respostas HTTP para informações sensíveis</li>
+                <li>Verificar metadados em documentos públicos</li>
+                <li>Testar directory listing e arquivos expostos</li>
+                <li>Buscar por tokens, chaves em repositórios públicos</li>
+                <li>Verificar vazamento em serviços de terceiros (Pastebin)</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 8 -->
+        <div class="prompt-card">
+            <div class="prompt-number">8</div>
+            <h3 class="prompt-title">Análise de Controles de Acesso</h3>
+            <div class="phase-title">Fase de Autorização:</div>
+            <ol class="steps">
+                <li>Mapear roles e permissões da aplicação</li>
+                <li>Testar bypass de controles de acesso horizontal</li>
+                <li>Testar bypass de controles de acesso vertical</li>
+                <li>Verificar exposição de dados sensíveis entre contas</li>
+                <li>Testar referências diretas a objetos</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 9 -->
+        <div class="prompt-card">
+            <div class="prompt-number">9</div>
+            <h3 class="prompt-title">Teste de Injeção SQL</h3>
+            <div class="phase-title">Fase de Ataque:</div>
+            <ol class="steps">
+                <li>Identificar parâmetros susceptíveis em formulários e URLs</li>
+                <li>Testar com payloads básicos de detecção</li>
+                <li>Determinar tipo e versão do banco de dados</li>
+                <li>Explorar injeções para extrair informação</li>
+                <li>Tentar elevação de privilégios via SQLi</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 10 -->
+        <div class="prompt-card">
+            <div class="prompt-number">10</div>
+            <h3 class="prompt-title">Análise de Criptografia e TLS</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Testar versões de protocolo suportadas</li>
+                <li>Verificar cifras criptográficas implementadas</li>
+                <li>Analisar certificados SSL/TLS (validade, confiança)</li>
+                <li>Testar vulnerabilidades (BEAST, POODLE, etc.)</li>
+                <li>Verificar implementação de HSTS</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 11 -->
+        <div class="prompt-card">
+            <div class="prompt-number">11</div>
+            <h3 class="prompt-title">Teste de Cross-Site Scripting (XSS)</h3>
+            <div class="phase-title">Fase de Ataque:</div>
+            <ol class="steps">
+                <li>Identificar pontos de entrada de dados não sanitizados</li>
+                <li>Testar payloads básicos de XSS reflexivo</li>
+                <li>Testar XSS armazenado em funcionalidades de persistência</li>
+                <li>Verificar DOM-based XSS</li>
+                <li>Explorar bypasses de filtros e WAFs</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 12 -->
+        <div class="prompt-card">
+            <div class="prompt-number">12</div>
+            <h3 class="prompt-title">Análise de Configurações de Servidores</h3>
+            <div class="phase-title">Fase de Pós-Exploração:</div>
+            <ol class="steps">
+                <li>Revisar configurações de serviços (Apache, Nginx, IIS)</li>
+                <li>Verificar permissões de arquivos e diretórios</li>
+                <li>Analisar logs de acesso e erro</li>
+                <li>Verificar configurações de firewall internas</li>
+                <li>Identificar informações de debugging expostas</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 13 -->
+        <div class="prompt-card">
+            <div class="prompt-number">13</div>
+            <h3 class="prompt-title">Teste de CSRF (Cross-Site Request Forgery)</h3>
+            <div class="phase-title">Fase de Ataque:</div>
+            <ol class="steps">
+                <li>Identificar funcionalidades críticas sem proteção CSRF</li>
+                <li>Analisar tokens de anti-CSRF (geração e validação)</li>
+                <li>Desenvolver PoC para explorar vulnerabilidades</li>
+                <li>Testar em diferentes contextos de navegador</li>
+                <li>Verificar configurações de SameSite em cookies</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 14 -->
+        <div class="prompt-card">
+            <div class="prompt-number">14</div>
+            <h3 class="prompt-title">Análise de Arquivos de Configuração</h3>
+            <div class="phase-title">Fase de Coleta:</div>
+            <ol class="steps">
+                <li>Buscar por arquivos de configuração expostos (.env, config)</li>
+                <li>Analisar conteúdo em busca de credenciais</li>
+                <li>Verificar permissões de acesso a arquivos sensíveis</li>
+                <li>Testar directory traversal para acessar arquivos</li>
+                <li>Revisar backups expostos com informações sensíveis</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 15 -->
+        <div class="prompt-card">
+            <div class="prompt-number">15</div>
+            <h3 class="prompt-title">Teste de Upload de Arquivos</h3>
+            <div class="phase-title">Fase de Ataque:</div>
+            <ol class="steps">
+                <li>Identificar funcionalidades de upload de arquivos</li>
+                <li>Testar upload de tipos de arquivo perigosos</li>
+                <li>Tentar bypass de verificações de tipo e conteúdo</li>
+                <li>Explorar vulnerabilidades de execução de arquivos</li>
+                <li>Verificar se é possível sobreescrever arquivos existentes</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 16 -->
+        <div class="prompt-card">
+            <div class="prompt-number">16</div>
+            <h3 class="prompt-title">Análise de JWT Tokens</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Capturar tokens JWT em tráfego de autenticação</li>
+                <li>Analisar estrutura e claims do token</li>
+                <li>Testar algoritmo "none" para bypass de verificação</li>
+                <li>Testar weak secrets para assinatura</li>
+                <li>Verificar validade e expiração de tokens</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 17 -->
+        <div class="prompt-card">
+            <div class="prompt-number">17</div>
+            <h3 class="prompt-title">Teste de Business Logic Bypass</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Compreender fluxos de negócio da aplicação</li>
+                <li>Identificar possíveis bypasses lógicos</li>
+                <li>Testar manipulação de parâmetros em processos críticos</li>
+                <li>Explorar race conditions em transações</li>
+                <li>Verificar validações do lado do cliente</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 18 -->
+        <div class="prompt-card">
+            <div class="prompt-number">18</div>
+            <h3 class="prompt-title">Análise de Componentes de Terceiros</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Identificar bibliotecas e frameworks de terceiros</li>
+                <li>Verificar versões contra vulnerabilidades conhecidas</li>
+                <li>Analisar componentes desatualizados ou abandonados</li>
+                <li>Testar exploração de vulnerabilidades em componentes</li>
+                <li>Verificar configurações padrão não alteradas</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 19 -->
+        <div class="prompt-card">
+            <div class="prompt-number">19</div>
+            <h3 class="prompt-title">Teste de Session Management</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Analisar cookies de sessão (segurança, escopo)</li>
+                <li>Testar fixation de sessão</li>
+                <li>Verificar tempo de expiração de sessões</li>
+                <li>Testar logout functionality e invalidação</li>
+                <li>Verificar concurrent logins e session sharing</li>
+            </ol>
+        </div>
+        
+        <!-- Prompt 20 -->
+        <div class="prompt-card">
+            <div class="prompt-number">20</div>
+            <h3 class="prompt-title">Teste de APIs REST/GraphQL</h3>
+            <div class="phase-title">Fase de Análise:</div>
+            <ol class="steps">
+                <li>Mapear endpoints e métodos disponíveis</li>
+                <li>Testar autenticação e autorização em endpoints</li>
+                <li>Verificar rate limiting e proteção contra abuso</li>
+                <li>Testar injection em parâmetros de consulta</li>
+                <li>Analizar respostas para information disclosure</li>
+            </ol>
+        </div>
+    </div>
+    
+    <footer>
+        <p>@ArthurPaixao</p>
+        <p>Use estas técnicas apenas em ambientes autorizados e para fins legítimos de segurança</p>
+    </footer>
+</body>
+</html>
